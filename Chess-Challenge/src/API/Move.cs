@@ -17,7 +17,10 @@ namespace ChessChallenge.API
 		public bool IsCastles => move.MoveFlag == Chess.Move.CastleFlag;
 		public bool IsNull => move.IsNull;
 		public ushort RawValue => move.Value;
-		public static readonly Move NullMove = new();
+
+        public static Move bestMove { get; internal set; }
+
+        public static readonly Move NullMove = new();
 
 		readonly Chess.Move move;
 		readonly ushort pieceTypeData;
